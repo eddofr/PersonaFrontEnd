@@ -1,0 +1,35 @@
+<button type="button" [routerLink]="['/persona/','nuevo']" class="btn btn-success mb-3">Regresar</button>
+<h2>Listado de personas</h2>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Pais</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellido}}</td>
+        <td>{{persona.edad}}</td>
+        <td>{{persona.pais.nombre}}</td>
+        <td>{{persona.estado.nombre}}</td>
+        <td>
+            <button type="button" [routerLink]="['/persona/',persona.id]" title="Editar persona" class="btn btn-info">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+                
+              <button (click)="borrarPersona(persona,i)" type="button"  title="Borrar heroe" class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
