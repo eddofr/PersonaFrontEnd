@@ -1,4 +1,4 @@
-<button type="button" [routerLink]="['/persona/','nuevo']" class="btn btn-success mb-3">Regresar</button>
+<button type="button" [routerLink]="['/persona/','nuevo']" class="btn btn-success mb-3"><b>Crear persona</b></button>
 <h2>Listado de personas</h2>
 <table class="table table-dark table-striped">
     <thead>
@@ -21,11 +21,11 @@
         <td>{{persona.pais.nombre}}</td>
         <td>{{persona.estado.nombre}}</td>
         <td>
-            <button type="button" [routerLink]="['/persona/',persona.id]" title="Editar persona" class="btn btn-info">
+            <button (click)="enviarPersona(persona)" type="button" [routerLink]="['/persona/',persona.id]" title="Editar persona" class="btn btn-info">
                 <i class="fa-solid fa-pen"></i>
               </button>
                 
-              <button (click)="borrarPersona(persona,i)" type="button"  title="Borrar heroe" class="btn btn-danger">
+              <button (click)="borrarPersona(persona,i)" type="button"  title="Borrar persona" class="btn btn-danger">
                 <i class="fa-solid fa-trash"></i>
               </button>
         </td>

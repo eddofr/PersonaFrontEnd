@@ -28,9 +28,8 @@ export class PersonasComponent implements OnInit{
     });
   }
 
-  editarPersona(persona : Persona){
-    this.router.navigateByUrl('persona');
-    
+  enviarPersona(persona : any){
+    this.personaService.addPersona(persona);
   }
 
 }
