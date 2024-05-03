@@ -1,0 +1,32 @@
+ 
+<button type="button" [routerLink]="['/personas']" class="btn btn-success mb-3">Ir a lista de personas</button>
+<form class="row g-3" [formGroup]="forma" (ngSubmit)="guardar()">
+  <h2>Registrar persona</h2>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Nombre</label>
+      <input name="nombre" type="text" class="form-control" id="nombre" formControlName="nombre">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Apellidos</label>
+      <input name="apellidos" type="text" class="form-control" id="apellidos" formControlName="apellidos">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Edad</label>
+      <input name="edad" type="number" class="form-control" id="edad" formControlName="edad">
+    </div>
+    <div class="col-12">
+      <label for="inputState" class="form-label">Pais</label>
+      <select name="pais" id="pais" class="form-select" formControlName="pais">
+        <option [ngValue]="pais" *ngFor="let pais of paises">{{pais.nombre}}</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <label for="inputState" class="form-label">Estado</label>
+      <select name="estado" id="estado" class="form-select" formControlName="estado">
+        <option [ngValue]="estado" *ngFor="let estado of estados">{{estado.nombre}}</option>
+      </select>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary w-100">Registrar</button>
+    </div>
+  </form>
